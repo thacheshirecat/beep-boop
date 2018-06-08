@@ -103,6 +103,13 @@ $(document).ready(function()
     $("#results").show();
 
     var userInput = parseInt($("#the-number").val());
+    if (userInput === 666)
+    {
+      $("#main").hide();
+      $("#nope").fadeIn(1500);
+      $("#whoops").fadeIn(1500);
+      document.body.style.backgroundColor = "red";
+    }
     var firstArray = createArray(userInput);
     var arraysArray = createArraysArray(firstArray);
     var preResults = oneScanner(arraysArray);
@@ -131,6 +138,13 @@ $(document).ready(function()
 
 
     var userInput = parseInt($("#the-number").val());
+    if (userInput === 666)
+    {
+      $("#main").hide();
+      $("#nope").fadeIn(1500);
+      $("#whoops").fadeIn(1500);
+      document.body.style.backgroundColor = "red";
+    }
     var firstArray = createArray(userInput);
     var arraysArray = createArraysArray(firstArray);
     var preResults = oneScanner(arraysArray);
@@ -155,10 +169,19 @@ $(document).ready(function()
   });
 
   //Function for hiding the results by clicking the word "Cool" at the bottom of the page
-  $("#close-results").click(function()
+  $(".close-results").click(function()
   {
     $("#results-buttons").hide();
     $(".results-column").hide();
+  });
+
+  //For when you make a dark mistake...
+  $("#whoops").click(function()
+  {
+    document.body.style.backgroundColor = "#8d42b0";
+    $("#main").show();
+    $("#nope").hide();
+    $("#whoops").hide();
   });
 
 });

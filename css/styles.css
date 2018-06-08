@@ -23,6 +23,18 @@ ul {
   display: none;
 }
 
+.close-results {
+  font-family: serif;
+  font-size: 20px;
+  color: white;
+}
+
+.close-results:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: lightgray;
+}
+
 #results-buttons {
   display: none;
 }
@@ -35,14 +47,17 @@ ul {
   font-size: 25px;
 }
 
-#close-results {
-  font-family: serif;
-  font-size: 20px;
-  color: white;
+#nope {
+  display: none;
+  height: 450px;
 }
 
-#close-results:hover {
-  text-decoration: underline;
+#whoops {
+  display: none;
+}
+
+#whoops:hover {
+  display: none;
+  color: grey;
   cursor: pointer;
-  color: lightgray;
 }

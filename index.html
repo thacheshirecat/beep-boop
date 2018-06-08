@@ -11,42 +11,48 @@
   </head>
   <body>
     <div class="container">
+      <img src="img/nope.jpg" id="nope">
+      <p><span id="whoops">Whoops...</span></p>
+      <div id="main">
 
-      <h1>Let's Play a Game.</h1>
+        <h1>Let's Play a Game.</h1>
 
-      <form id="number-input">
-        <div class="form-group">
-          <p>Enter a Number Here</p>
-          <label for="the-number"> --- ></label>
-          <input id="the-number" class="form" type="text">
-          <label>< ---</label>
-          <p>Enter a Word Here</p>
-          <label for="the-name"> --- ></label>
-          <input id="the-name" class="form" type="text">
-          <label>< ---</label>
-        </div>
-        <button type="submit" class="btn btn-success">Count Up</button>
-        <button id="results-reverse-button" type="click" class="btn btn-warning">Count Down</button>
-      </form>
-
-      <div id="results-buttons">
-      <button id="results-check-button" type="click" class="btn btn-info">Click to verify results</button>
-      </div>
-
-      <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6 results-column">
-          <div class="well">
-            <ul id="results"></ul>
-            <ul id="results-check"></ul>
+        <form id="number-input">
+          <div class="form-group">
+            <p>Enter a Number Here</p>
+            <label for="the-number"> --- ></label>
+            <input id="the-number" class="form" type="text">
+            <label>< ---</label>
+            <p>Enter a Word Here</p>
+            <label for="the-name"> --- ></label>
+            <input id="the-name" class="form" type="text">
+            <label>< ---</label>
           </div>
-          <p><span id="close-results">Cool.</span></p>
-        </div>
-        <div class="col-md-3">
-        </div>
-      </div>
+          <button type="submit" class="btn btn-success">Count Up</button>
+          <button id="results-reverse-button" type="click" class="btn btn-warning">Count Down</button>
+        </form>
 
+        <div id="results-buttons">
+        <button id="results-check-button" type="click" class="btn btn-info">Click to verify results</button>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 results-column">
+            <img src="img/cat.jpg">
+          </div>
+          <div class="col-md-6 results-column">
+            <p><span class="close-results">Close Results</span></p>
+            <div class="well">
+              <ul id="results"></ul>
+              <ul id="results-check"></ul>
+            </div>
+            <p><span class="close-results">Cool.</span></p>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+
+      </div>
     </div>
   </body>
 </html>
