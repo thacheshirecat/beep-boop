@@ -1,14 +1,28 @@
-var createFirstArray = function(input)
+//
+//Business Logic Functions
+//
+
+var createArray = function(input)
 {
   var firstArray = [];
-  for (index = input; index > 0; index--)
+  for (index = input; index >= 0; index--)
   {
-    firstArray.push(input);
+    firstArray.push(input.toString());
     input = input - 1;
-    console.log(firstArray);
   }
-  alert(firstArray);
+  firstArray.reverse();
   return firstArray;
+};
+
+var createArraysArray = function(array)
+{
+  array.forEach(function(element)
+  {
+    element = element.split("");
+    alert(element);
+  });
+  alert(array);
+  return array;
 };
 
 
@@ -31,9 +45,9 @@ var createFirstArray = function(input)
 
 
 
-
-
-//user interface logic
+//
+//Front End Functions
+//
 
 $(document).ready(function()
 {
@@ -42,8 +56,8 @@ $(document).ready(function()
     event.preventDefault();
 
     var userInput = parseInt($("#the-number").val());
-    alert(userInput - 1);
-    var result = createFirstArray(userInput);
+    var firstArray = createArray(userInput);
+    var result = createArraysArray(firstArray);
     alert(result);
 
   });
