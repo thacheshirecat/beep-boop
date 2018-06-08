@@ -5,6 +5,13 @@
 //Turns inputted numbers into an array, replacing the number 0 with Beep!, the number 1 with Boop!, any number evenly divisible by 3 with Error. or any number evenly divisible by 5 into REEE!
 var createArray = function(input)
 {
+
+  var userName = $("#the-name").val();
+  if (userName === "")
+  {
+    userName = "the ocean";
+  }
+
   var firstArray = [];
   for (index = input; index >= 0; index--)
   {
@@ -15,7 +22,7 @@ var createArray = function(input)
     }
     else if (input%5 === 0)
     {
-      firstArray.push("REEE!");
+      firstArray.push("Here be " + userName + "!");
       input = input - 1;
     }
     else if (input%3 === 0)
@@ -112,7 +119,7 @@ $(document).ready(function()
 
   });
 
-  //Function for when the user clicks the count down button on the page
+  //Function for when the user clicks the Count Down button on the page
   $("#results-reverse-button").click(function(event)
   {
     event.preventDefault();

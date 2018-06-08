@@ -26,3 +26,11 @@ ul {
 #results-well {
   display: none;
 }
+
+#results {
+  font-size: 25px;
+}
+
+#results-check {
+  font-size: 25px;
+}
