@@ -1,14 +1,15 @@
 var createFirstArray = function(input)
 {
   var firstArray = [];
-  for (index = input; index >= 0; input--)
+  for (index = input; index > 0; index--)
   {
-
+    firstArray.push(input);
+    input = input - 1;
+    console.log(firstArray);
   }
-
   alert(firstArray);
   return firstArray;
-}
+};
 
 
 
@@ -41,12 +42,13 @@ $(document).ready(function()
     event.preventDefault();
 
     var userInput = parseInt($("#the-number").val());
+    alert(userInput - 1);
     var result = createFirstArray(userInput);
     alert(result);
 
-  })
+  });
 
 
 
 
-})
+});
