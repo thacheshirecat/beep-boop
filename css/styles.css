@@ -19,11 +19,11 @@ ul {
   background-color: #ffd1fb;
 }
 
-#results-buttons {
+.results-column {
   display: none;
 }
 
-#results-well {
+#results-buttons {
   display: none;
 }
 
@@ -33,4 +33,16 @@ ul {
 
 #results-check {
   font-size: 25px;
+}
+
+#close-results {
+  font-family: serif;
+  font-size: 20px;
+  color: white;
+}
+
+#close-results:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: lightgray;
 }

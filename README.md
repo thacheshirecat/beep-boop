@@ -33,27 +33,32 @@ This web application takes in a number from the user via a form and then outputs
 Specifications:
 1. Turns 0 into "Beep!"
   input: 0
-  output: Beep!
+  output: ["Beep!"]
 
 2. Turns 1 into "Boop!"
-  input: 3
-  output: Beep! Boop! 2 3
+  input: 1
+  output: ["Beep!"]
 
-3. Turns numbers that are evenly divisible by 5 into "REEE!" (takes priority over 1 and 0)
-  input: 12
-  output: Beep! Boop! 2 3 4 REEE! 6 7 8 9 REEE! 11 12
+3. Turns numbers that are evenly divisible by 5 into "Here be the ocean!" (takes priority over evenly divisible by 3, numbers with 1 and numbers with 0)
+  input: 5
+  output: ["Here be the ocean!"]
 
 4. Turns numbers that are evenly divisible by 3 into "Error!" (takes priority over 1 and 0)
   input: 12
-  output: Beep! Boop! 2 Error! 4 REEE! Error! 7 8 Error! REEE! 11 Error!
+  output: ["Error!"]
 
 5. Turns numbers containing 1 into "Boop!"(takes priority over 0)
   input: 11
-  output: Beep! Boop! 2 Error! 4 REEE! Error! 7 8 Error! REEE! Boop!
+  output: ["Boop!"]
 
 6. Turns numbers containing 0 into "Beep!"
-  input: 11
-  output: Beep! Boop! 2 Error! 4 REEE! Error! 7 8 Error! REEE! Boop!
+  input: 101
+  output: ["Beep!"]
+
+7. If text is entered into the second form field, it instead turns numbers that are evenly divisible by 5 into "Here be " + the inputted text + "!".
+ input: 5 / Alex
+ output: ["Here be Alex!"]
+
 \*************/
 
 /********************************\

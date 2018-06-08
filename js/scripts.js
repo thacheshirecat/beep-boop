@@ -2,7 +2,7 @@
 //Business Logic Functions
 //
 
-//Turns inputted numbers into an array, replacing the number 0 with Beep!, the number 1 with Boop!, any number evenly divisible by 3 with Error. or any number evenly divisible by 5 into REEE!
+//Turns inputted numbers into an array, replacing the number 0 with Beep!, the number 1 with Boop!, any number evenly divisible by 3 with Error. or any number evenly divisible by 5 into Here be the ocean! (substitutes user input for "ocean" if there is any in the second field)
 var createArray = function(input)
 {
 
@@ -99,8 +99,7 @@ $(document).ready(function()
     $("#results-check").text("");
     $("#results-check").hide();
     $("#results-buttons").show();
-    $("#results-reverse-button").show();
-    $("#results-well").show();
+    $(".results-column").show();
     $("#results").show();
 
     var userInput = parseInt($("#the-number").val());
@@ -127,8 +126,7 @@ $(document).ready(function()
     $("#results-check").text("");
     $("#results-check").hide();
     $("#results-buttons").show();
-    $("#results-reverse-button").show();
-    $("#results-well").show();
+    $(".results-column").show();
     $("#results").show();
 
 
@@ -154,6 +152,13 @@ $(document).ready(function()
   {
     $("#results").toggle();
     $("#results-check").toggle();
+  });
+
+  //Function for hiding the results by clicking the word "Cool" at the bottom of the page
+  $("#close-results").click(function()
+  {
+    $("#results-buttons").hide();
+    $(".results-column").hide();
   });
 
 });
