@@ -15,7 +15,11 @@ ul {
   font-size: 25px;
 }
 
-#results-button {
+.well {
+  background-color: #ffd1fb;
+}
+
+#results-buttons {
   display: none;
 }
 

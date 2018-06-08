@@ -2,7 +2,7 @@
 //Business Logic Functions
 //
 
-//Turns inputted numbers into an array, replacing the number 0 with Beep!, the number 1 with Boop! and any number evenly divisible by 3 with Error.
+//Turns inputted numbers into an array, replacing the number 0 with Beep!, the number 1 with Boop!, any number evenly divisible by 3 with Error. or any number evenly divisible by 5 into REEE!
 var createArray = function(input)
 {
   var firstArray = [];
@@ -20,7 +20,7 @@ var createArray = function(input)
     }
     else if (input%3 === 0)
     {
-      firstArray.push("Error.");
+      firstArray.push("Error!");
       input = input - 1;
     }
     else
@@ -84,14 +84,45 @@ var zeroScanner = function(array)
 
 $(document).ready(function()
 {
-  //Function for when the user submits the form.
+  //Function for when the user submits the form or clicks the Count Up button
   $("#number-input").submit(function(event)
   {
     event.preventDefault();
     $("#results").text("");
     $("#results-check").text("");
     $("#results-check").hide();
-    $("#results-button").show();
+    $("#results-buttons").show();
+    $("#results-reverse-button").show();
+    $("#results-well").show();
+    $("#results").show();
+
+    var userInput = parseInt($("#the-number").val());
+    var firstArray = createArray(userInput);
+    var arraysArray = createArraysArray(firstArray);
+    var preResults = oneScanner(arraysArray);
+    var results = zeroScanner(preResults);
+    var resultsCheck = 0;
+
+    results.forEach(function(result)
+    {
+      $("#results-check").append("<li>"+result+"---> "+resultsCheck+"</li>");
+      $("#results").append("<li>"+result+"</li>");
+      resultsCheck = resultsCheck + 1;
+    });
+
+  });
+
+  //Function for when the user clicks the count down button on the page
+  $("#results-reverse-button").click(function(event)
+  {
+    event.preventDefault();
+    $("#results").text("");
+    $("#results-check").text("");
+    $("#results-check").hide();
+    $("#results-buttons").show();
+    $("#results-reverse-button").show();
+    $("#results-well").show();
+    $("#results").show();
 
 
     var userInput = parseInt($("#the-number").val());
@@ -99,17 +130,16 @@ $(document).ready(function()
     var arraysArray = createArraysArray(firstArray);
     var preResults = oneScanner(arraysArray);
     var results = zeroScanner(preResults);
+    var resultsCheck = results.length - 1;
 
-
-    var resultsCheck = 0;
+    results.reverse();
     results.forEach(function(result)
     {
       $("#results-check").append("<li>"+result+"---> "+resultsCheck+"</li>");
       $("#results").append("<li>"+result+"</li>");
-      resultsCheck = resultsCheck + 1;
+      resultsCheck = resultsCheck - 1;
     });
-    $("#results-well").show();
-    $("#results").show();
+
   });
 
   //Function for clicking the button to verify the results against the numbers in the range
@@ -118,8 +148,5 @@ $(document).ready(function()
     $("#results").toggle();
     $("#results-check").toggle();
   });
-
-
-
 
 });
