@@ -13,6 +13,11 @@ var createArray = function(input)
       firstArray.push("Beep!");
       input = input - 1;
     }
+    else if (input%5 === 0)
+    {
+      firstArray.push("REEE!");
+      input = input - 1;
+    }
     else if (input%3 === 0)
     {
       firstArray.push("Error.");
@@ -76,12 +81,18 @@ var zeroScanner = function(array)
 //Front End Functions
 //
 
+
 $(document).ready(function()
 {
+  //Function for when the user submits the form.
   $("#number-input").submit(function(event)
   {
     event.preventDefault();
     $("#results").text("");
+    $("#results-check").text("");
+    $("#results-check").hide();
+    $("#results-button").show();
+
 
     var userInput = parseInt($("#the-number").val());
     var firstArray = createArray(userInput);
@@ -90,13 +101,22 @@ $(document).ready(function()
     var results = zeroScanner(preResults);
 
 
-    var test = 0;
+    var resultsCheck = 0;
     results.forEach(function(result)
     {
-      $("#results").append("<li>"+result+"---> "+test+"</li>");
-      test = test + 1;
+      $("#results-check").append("<li>"+result+"---> "+resultsCheck+"</li>");
+      $("#results").append("<li>"+result+"</li>");
+      resultsCheck = resultsCheck + 1;
     });
+    $("#results-well").show();
+    $("#results").show();
+  });
 
+  //Function for clicking the button to verify the results against the numbers in the range
+  $("#results-check-button").click(function()
+  {
+    $("#results").toggle();
+    $("#results-check").toggle();
   });
 
 

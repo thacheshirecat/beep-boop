@@ -11,15 +11,28 @@
   </head>
   <body>
     <div class="container">
+
       <h1>Let's Play a Game.</h1>
+
       <form id="number-input">
         <div class="form-group">
-          <label for="the-number">Enter Number Here ---></label>
+          <p>Enter Number Here</p>
+          <label for="the-number"> --- ></label>
           <input id="the-number" class="form" type="text">
+          <label>< ---</label>
         </div>
         <button type="submit" class="btn btn-success">Submit!</button>
       </form>
-      <ul id="results"></ul>
+
+      <div id="results-button">
+      <button id="results-check-button" type="click" class="btn btn-info">Click to verify results</button>
+      </div>
+
+      <div id="results-well" class="well">
+        <ul id="results"></ul>
+        <ul id="results-check"></ul>
+      </div>
+
     </div>
   </body>
 </html>

@@ -1,5 +1,24 @@
 body {
-  background-color: white;
+  background-color: #8d42b0;
   font-family: 'Indie Flower';
   font-size: 30px;
+  text-align: center;
+}
+
+ul {
+   display: inline-block;
+   text-align:left;
+ }
+
+.btn {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+#results-button {
+  display: none;
+}
+
+#results-well {
+  display: none;
 }
